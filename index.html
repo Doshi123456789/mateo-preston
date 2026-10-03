@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Mateo Preston</title>
+<meta name="description" content="Mateo Preston, 16 — Good Neighbor co-founder, market researcher, and founder of Xavier's AI club. Portfolio and proof of work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #F3F4F6;
+    --surface: #FFFFFF;
+    --ink: #14161A;
+    --muted: #565D6B;
+    --line: #D8DBE1;
+    --accent: #2647C4;
+    --accent-ink: #FFFFFF;
+    --accent-soft: #E7ECFB;
+    --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+    --font-body: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    --font-mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+    --maxw: 720px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --bg: #0F1420;
+      --surface: #161D2E;
+      --ink: #EAEEF7;
+      --muted: #A9B3C7;
+      --line: #2B3550;
+      --accent: #6E8CFF;
+      --accent-ink: #0F1420;
+      --accent-soft: #1E2A4D;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: var(--accent); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+  a:hover, a:focus-visible { text-decoration-thickness: 2px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  [hidden] { display: none !important; }
+
+  .wrap {
+    max-width: var(--maxw);
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+
+  .bp-grid {
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 28px 28px;
+    background-position: center top;
+  }
+
+  header.hero {
+    position: relative;
+    padding-block: 48px 40px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .titleblock {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 3px 18px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    padding: 12px 16px;
+    width: fit-content;
+    margin: 0 0 32px;
+  }
+  .titleblock dt { color: var(--muted); margin: 0; grid-column: 1; }
+  .titleblock dd { color: var(--ink); margin: 0; font-weight: 600; grid-column: 2; }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin: 0 0 12px;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(1.75rem, 4.5vw + 1rem, 2.75rem);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+    margin: 0 0 20px;
+    max-width: 20ch;
+  }
+
+  .lede {
+    font-size: 1.05rem;
+    max-width: 56ch;
+    color: var(--ink);
+    margin: 0 0 28px;
+  }
+
+  .now {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    padding: 14px 16px;
+    margin: 0 0 28px;
+    border-radius: 2px;
+  }
+  .now-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    flex-shrink: 0;
+    padding-top: 2px;
+  }
+  .now p { margin: 0; font-size: 0.94rem; }
+
+  .links { display: flex; flex-wrap: wrap; gap: 10px 22px; font-family: var(--font-mono); font-size: 0.85rem; margin: 0; padding: 0; list-style: none; }
+  .links li { display: contents; }
+
+  .index-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin: 44px 0 0;
+  }
+
+  section.project {
+    padding-block: 40px;
+    border-bottom: 1px solid var(--line);
+  }
+  section.project.featured { padding-block: 32px 44px; }
+
+  section.project .eyebrow { margin-bottom: 8px; }
+
+  h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(1.4rem, 2.5vw + 1rem, 1.9rem);
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+
+  .prose { max-width: 62ch; }
+  .prose p { margin: 0 0 14px; }
+  .prose p:last-child { margin-bottom: 0; }
+
+  .specs { border-top: 1px solid var(--line); margin: 24px 0 0; padding: 0; }
+  .specs > div {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    margin: 0;
+  }
+  .specs dt {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    margin: 0;
+  }
+  .specs dd { margin: 0; max-width: 56ch; }
+
+  .stamp {
+    display: inline-block;
+    margin-top: 24px;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.75rem;
+    padding: 8px 14px;
+    border-radius: 3px;
+    transform: rotate(-1.5deg);
+  }
+  .stamp-note { margin: 10px 0 0; color: var(--muted); font-size: 0.88rem; max-width: 52ch; }
+
+  .project.small .prose { max-width: 60ch; }
+
+  .contact-block {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    margin: 20px 0 0;
+    padding: 0;
+  }
+  .contact-row { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+  .contact-row .label { color: var(--muted); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; width: 90px; flex-shrink: 0; }
+  .placeholder { border-bottom: 1px dashed var(--muted); color: var(--muted); text-decoration: none; }
+  .fine-note { color: var(--muted); font-size: 0.8rem; margin: 4px 0 0; max-width: 56ch; }
+
+  footer {
+    padding-block: 28px 48px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  @media (min-width: 640px) {
+    .specs > div { grid-template-columns: 180px 1fr; gap: 24px; align-items: baseline; }
+    header.hero { padding-block: 64px 52px; }
+    section.project { padding-block: 52px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bp-grid">
+  <div class="wrap">
+    <header class="hero">
+      <dl class="titleblock">
+        <dt>Name</dt><dd>Mateo Preston</dd>
+        <dt>School</dt><dd>Xavier High School, Manhattan</dd>
+        <dt>Grad</dt><dd>Class of 2028</dd>
+        <dt>Based</dt><dd>New York City</dd>
+      </dl>
+
+      <p class="eyebrow">The rule I build by</p>
+      <h1>&ldquo;If you can stack the work of a lot of minds, you can get a lot more done.&rdquo;</h1>
+      <p class="lede">I'm Mateo Preston, 16, a junior at Xavier High School in Manhattan, class of 2028. I build things with AI.</p>
+
+      <div class="now">
+        <span class="now-tag">Now</span>
+        <p>Good Neighbor is submitted to the App Store and waiting on Apple's review. Getting its job rules cleared with New York State before it launches. Starting Xavier's AI club this fall.</p>
+      </div>
+
+      <ul class="links">
+        <li><a href="https://thegoodneighborapp.com">thegoodneighborapp.com &#8599;</a></li>
+        <li><a href="https://www.linkedin.com/in/mateo-preston-333291402/">LinkedIn &#8599;</a></li>
+      </ul>
+    </header>
+
+    <main>
+      <p class="index-label">What I've built</p>
+
+      <section class="project featured" id="good-neighbor" aria-labelledby="gn-heading">
+        <p class="eyebrow">2026.07 &mdash; Co-founder</p>
+        <h2 id="gn-heading">Good Neighbor</h2>
+        <div class="prose">
+          <p>Good Neighbor is a marketplace where verified teens do small paid jobs for neighbors in New York City. I started it with a friend in July, and I built the actual app myself in September using AI coding agents.</p>
+          <p>The whole thing runs on one idea: an adult should always be one step away from what a teen is doing.</p>
+        </div>
+
+        <dl class="specs">
+          <div><dt>Install</dt><dd>Web app that installs straight to the home screen. No app store.</dd></div>
+          <div><dt>Verification</dt><dd>A school-ID photo plus a live selfie, checked before anyone can work.</dd></div>
+          <div><dt>Parent oversight</dt><dd>A parent sits on every teen account and approves jobs by default.</dd></div>
+          <div><dt>Location</dt><dd>Teens see a fuzzed pin and a neighborhood, nothing more, until a job is confirmed. Then the exact address unlocks for that one teen, and it drops out of their history once the job's done.</dd></div>
+          <div><dt>Exit</dt><dd>Either side, or the teen's parent, can cancel any time before the job is finished. No reason required.</dd></div>
+          <div><dt>Testing</dt><dd>56 automated tests, including tests that check safety at the database level, not just in the app.</dd></div>
+          <div><dt>Job rules</dt><dd>Written from federal and New York child-labor guidelines. No ladders, roofs, gutters, driving, or power tools. An adult is home, or the job stays outside.</dd></div>
+        </dl>
+
+        <div class="stamp">Not launched yet</div>
+        <p class="stamp-note">My dad set up the Apple Developer account and we've submitted the app; now we're waiting on Apple's review. Before any teen does a real job, I'm confirming New York's working-paper rules with the state Department of Labor. I haven't made any money from it yet. What I've learned so far is that posting consistently matters, and that getting something all the way to the App Store is harder than building it.</p>
+      </section>
+
+      <section class="project" id="market-research" aria-labelledby="mr-heading">
+        <p class="eyebrow">2026.07 &mdash; Market research</p>
+        <h2 id="mr-heading">Market research for a venture investor</h2>
+        <div class="prose">
+          <p>I've been doing contract research for a venture investor building a high-end home-maintenance business. I built a target list of 49 ZIP codes, tracking income, home values, ownership rates, and named competitors for each one, then narrowed it to a top 20 across Westchester and northern New Jersey.</p>
+          <p>From there I scoped a survey of homeowners with $5 million-plus homes: contacted ten research firms, ran a 28-question review to pick one, and negotiated the billing so the client only pays for responses that actually come in.</p>
+        </div>
+      </section>
+
+      <section class="project" id="swaq" aria-labelledby="swaq-heading">
+        <p class="eyebrow">2026.07&ndash;08 &mdash; Summer intern</p>
+        <h2 id="swaq-heading">SWAQ</h2>
+        <div class="prose">
+          <p>I spent the summer helping SWAQ's CEO set up and use an AI workflow. Then I went through 52 email threads of his founder notes and turned them into one organized archive and a working brief for a new product line.</p>
+        </div>
+      </section>
+
+      <section class="project" id="ai-club" aria-labelledby="club-heading">
+        <p class="eyebrow">2026.09 &mdash; Founder</p>
+        <h2 id="club-heading">Xavier AI Club</h2>
+        <div class="prose">
+          <p>This fall I'm starting the AI club at my school with a faculty advisor. I built the club site, a sign-up form, posters, and a starter kit for teachers to run it in Google Classroom.</p>
+          <p>I also reached out to Hudson Guild, a nonprofit in Chelsea, about bringing some of it to the kids in their programs.</p>
+        </div>
+        <ul class="links" style="margin-top: 16px;">
+          <li><a href="https://doshi123456789.github.io/xavier-ai-club/">doshi123456789.github.io/xavier-ai-club &#8599;</a></li>
+        </ul>
+      </section>
+
+      <section class="project small" id="how-i-work" aria-labelledby="how-heading">
+        <p class="eyebrow">Ongoing</p>
+        <h2 id="how-heading">How I actually get this done</h2>
+        <div class="prose">
+          <p>Most of what's on this page got built with help from a small system of AI agents I run on my own computer. They research, draft, post on a schedule, and flag what actually needs me.</p>
+          <p>I use the same setup to run a daily content loop for a few social accounts.</p>
+        </div>
+      </section>
+
+      <section class="project small" id="jiu-jitsu" aria-labelledby="bjj-heading">
+        <p class="eyebrow">Ongoing</p>
+        <h2 id="bjj-heading">Jiu-jitsu</h2>
+        <div class="prose">
+          <p>I've trained Brazilian jiu-jitsu for about a year and a half. I'm a white belt with one stripe, and I've competed in the adult bracket. I did poorly.</p>
+          <p>At one tournament I got submitted and felt like throwing up. It was probably my lowest moment in the sport. I stayed in it, and that's what taught me you have to stick through things.</p>
+        </div>
+      </section>
+
+      <section class="project small" id="outside-building" aria-labelledby="outside-heading">
+        <p class="eyebrow">2026.02 &mdash; Ongoing</p>
+        <h2 id="outside-heading">Outside of building</h2>
+        <div class="prose">
+          <p>Since February I've volunteered with Hudson Guild in Chelsea, running activities for kids and helping with food drives.</p>
+        </div>
+      </section>
+
+      <section class="project" id="contact" aria-labelledby="contact-heading" style="border-bottom: none;">
+        <h2 id="contact-heading">Get in touch</h2>
+        <dl class="contact-block">
+          <div class="contact-row">
+            <dt class="label">Email</dt>
+            <dd><a href="mailto:prestonmateo@gmail.com">prestonmateo@gmail.com</a></dd>
+          </div>
+          <div class="contact-row">
+            <dt class="label">LinkedIn</dt>
+            <dd><a href="https://www.linkedin.com/in/mateo-preston-333291402/">linkedin.com/in/mateo-preston-333291402</a></dd>
+          </div>
+        </dl>
+      </section>
+    </main>
+
+    <footer>
+      <p>Rev 2026-10-02 &middot; AI coding agents write the code. I make the product and safety calls.</p>
+    </footer>
+  </div>
+</div>
+
+</body>
+</html>
